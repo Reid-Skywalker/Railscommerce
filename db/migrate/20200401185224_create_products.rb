@@ -7,7 +7,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.float :cost
       t.integer :stock
       t.references :catagories, null: true, foreign_key: true
-      t.string :image
 
       t.timestamps
     end
