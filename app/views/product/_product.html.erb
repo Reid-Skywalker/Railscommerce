@@ -1,0 +1,25 @@
+<div class='column is-one-quarter' >
+<div class='card'>
+<% if product.image.present?%>
+<div class='card-image'>
+  <figure class="image">
+    <%= image_tag product.image %>
+    </figure>
+</div>
+<% end %>
+<div class= 'card-content'>
+<p class='title'>
+  <% if show_link %>
+  <%= link_to product.name,product%>
+  <% else %>
+  <%= product.name %>
+  <% end %>
+</p>
+<p> Price: $<%= product.cost%></p>
+<p> Stock:   <%= product.stock%></p>
+<p> Catagory: <%= Catagory.find(product.catagories_id).name %> </p>
+</div>
+<footer class='card-footer'>
+</footer>
+</div>
+</div>

@@ -1,0 +1,10 @@
+<br/>
+<br/>
+<h3 class='title is-4'>All Products</h3>
+<div class='columns is-multiline'>
+<%= render partial: 'product',
+           collection: @products,
+           locals: {show_link: true}
+%>
+</div>
+
