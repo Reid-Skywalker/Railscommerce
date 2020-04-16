@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   has_one_attached :image
   belongs_to :catagory, optional: true
 
-  validates :name, :price, :stock, presence: true
-  validates :price, numericality: true
+  validates :name, :cost, :stock, presence: true
+  validates :cost, numericality: true
   validates :stock, numericality: { only_integer: true }
 end
