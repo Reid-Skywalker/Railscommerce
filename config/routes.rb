@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :product, only: :show
 
   get 'search', to: 'product#search', as: 'search'
-  get 'about', to: 'product#about', as: 'about'
+  get 'about', to: 'about#show', as: 'about'
+  get 'contact', to: 'contact#show', as: 'contact'
 
   root to: 'product#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
