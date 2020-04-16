@@ -1,0 +1,24 @@
+<% @contact = Contact.first()%>
+<div class="container is-fluid">
+  <div class="notification">
+    <h1 class='title is-2'><%=@contact.title%></h1>
+<br/>
+<br/>
+
+<div class="tile is-ancestor">
+  <div class="tile is-4 is-vertical is-parent">
+    <div class="tile is-child box">
+      <p>Email Us </p><strong><%=@contact.email%></strong>
+    </div>
+    <div class="tile is-child box">
+     <p>Call Us </p><strong><%=@contact.phone%> </strong>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p><%=@contact.content%></p>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
