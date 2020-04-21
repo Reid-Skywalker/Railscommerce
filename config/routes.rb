@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'search', to: 'product#search', as: 'search'
   get 'about', to: 'about#show', as: 'about'
   get 'contact', to: 'contact#show', as: 'contact'
+  post 'product/add_to_cart/:id', to: 'product#add_to_cart', as: 'add_to_cart'
+  delete 'product/remove_from_cart/:id', to: 'product#remove_from_cart', as: 'remove_from_cart'
 
   root to: 'product#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
