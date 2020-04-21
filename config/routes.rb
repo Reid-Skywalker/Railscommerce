@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'contact#show', as: 'contact'
   post 'product/add_to_cart/:id', to: 'product#add_to_cart', as: 'add_to_cart'
   delete 'product/remove_from_cart/:id', to: 'product#remove_from_cart', as: 'remove_from_cart'
-
+  post 'product/increment/:id', to: 'product#increment', as: 'increment'
+  post 'product/decriment/:id', to: 'product#decriment', as: 'decriment'
   root to: 'product#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
