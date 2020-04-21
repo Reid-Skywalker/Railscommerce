@@ -15,6 +15,11 @@
   <%= product.name %>
   <% end %>
 </p>
+<% if @cart.include?(product)%>
+  <p><%= link_to 'remove from cart', remove_from_cart_path(product.id),method: :delete %></p>
+<% else %>
+  <p><%= link_to 'add to cart', add_to_cart_path(product.id), method: :post %></p>
+<% end %>
 <p> Price: $<%= product.cost%></p>
 <p> Stock:   <%= product.stock%></p>
 <p> Catagory: <%= Catagory.find(product.catagories_id).name %> </p>

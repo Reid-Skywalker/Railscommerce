@@ -1,6 +1,20 @@
 <br/>
 <br/>
 <h3 class='title is-4'>All Products</h3>
+
+<details>
+<summary> Shopping Cart</summary>
+<% if @cart.empty?%>
+  <p>No items in cart</p>
+<% else %>
+<ul>
+  <% @cart.each do |product| %>
+    <li><%= product.name %> - <%= link_to 'remove', remove_from_cart_path(product.id),method: :delete %></li>
+  <% end %>
+</ul>
+<% end %>
+</details>
+
 <%= paginate @products %>
 <div class='columns is-multiline'>
 <%= render partial: 'product',
