@@ -23,6 +23,12 @@ class ProductController < ApplicationController
     redirect_to root_path
   end
 
+  def remove_from_cart
+    id = params[:id]
+    session[:cart].delete(id)
+    redirect_to root_path
+  end
+
   def increment
     id = params[:id]
     session[:cart][id] += 1
@@ -37,12 +43,6 @@ class ProductController < ApplicationController
     else
       session[:cart].delete(id)
     end
-    redirect_to root_path
-  end
-
-  def remove_from_cart
-    id = params[:id].to_i
-    session[:cart].delete(id)
     redirect_to root_path
   end
 

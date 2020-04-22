@@ -9,7 +9,7 @@
 <% else %>
 <ul>
   <% @cart.each do |id,quantity| %>
-    <li><%= Product.find(id).name %> Quantity: <%= link_to '-', decriment_path(id),method: :post %> <%= quantity %> <%= link_to '+', increment_path(id),method: :post %></li>
+    <li><%= Product.find(id).name %> Quantity: <%= link_to '-', decriment_path(id),method: :post %> <%= quantity %> <%= link_to '+', increment_path(id),method: :post %> | <%= link_to 'remove', remove_from_cart_path(id),method: :delete %> |</li>
   <% end %>
 </ul>
 <% end %>
