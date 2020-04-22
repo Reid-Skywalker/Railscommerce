@@ -15,7 +15,7 @@ class CheckoutController < ApplicationController
       product = Product.find(id)
       line_item = {
         name: product.name,
-        price: product.cost,
+        amount: product.cost,
         quantity: quantity,
         currency: 'cad'
       }
