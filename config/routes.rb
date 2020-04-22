@@ -3,6 +3,12 @@
 Rails.application.routes.draw do
   resources :product, only: :show
 
+  scope '/checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+  end
+
   get 'search', to: 'product#search', as: 'search'
   get 'about', to: 'about#show', as: 'about'
   get 'contact', to: 'contact#show', as: 'contact'
