@@ -13,6 +13,7 @@
   <% end %>
 </ul>
 <% end %>
+<%= button_to 'checkout', checkout_create_path, method: :post, params: {cart: @cart}, remote: true %>
 </details>
 
 <%= paginate @products %>
